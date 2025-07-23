@@ -8,6 +8,11 @@ Route::get('/foo', function () {
     return 'foo';
 });
 
+Route::get('/test-locale', function() {
+    return app()->getLocale();
+});
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -16,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/test-mail', function () {
     try {
         Mail::raw('Este es un correo de prueba desde Laravel con Gmail', function ($message) {
-            $message->to('tu-email-destino@gmail.com')
+            $message->to('washingtonolmos@gmail.com')
                     ->subject('Prueba de correo desde FileManager API');
         });
         
