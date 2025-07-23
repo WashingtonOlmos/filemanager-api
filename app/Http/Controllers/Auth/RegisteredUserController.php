@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+        # enviar correo de verificación
         event(new Registered($user));
 
         return response()->json([
